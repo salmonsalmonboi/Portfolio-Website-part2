@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="spinner">
+            <div class="spinner-dot"></div>
+            <div class="spinner-dot"></div>
+            <div class="spinner-dot"></div>
+            <div class="spinner-dot"></div>
+        </div>
+    </div>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -21,7 +30,10 @@
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
+                <div class="theme-toggle">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+            </ul>   
             <div class="nav-toggle">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -29,7 +41,10 @@
             </div>
         </div>
     </nav>
-
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress">
+        <div class="progress-bar"></div>
+    </div>
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
@@ -207,6 +222,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
