@@ -68,6 +68,14 @@
 }
 
 /* Reset and Base Styles */
+:root {
+  --color-bg: #fdf6e3;        /* ครีมอ่อน */
+  --color-text: #3e3e3e;      /* เทาเข้ม */
+  --color-accent: #ff6f3c;    /* ส้มเรโทร */
+  --color-secondary: #dcdcdc; /* เทาอ่อน */
+  --color-btn-hover: #ff8a5c; /* ส้มอ่อนเวลา hover */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -75,7 +83,9 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
@@ -92,7 +102,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background-color: var(--color-secondary);
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1rem 0;
@@ -146,28 +156,41 @@ body {
     transition: 0.3s;
 }
 
-/* Hero Section */
-.hero {
+/* Hero Section 1 (Original: Text Left, Image Right) */
+.hero-1 {
     min-height: 100vh;
     display: flex;
+    flex-direction: row; /* Text on left, image on right */
     align-items: center;
     padding: 100px 20px 50px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--color-text); /* #3e3e3e */
     color: white;
+}
+
+/* Hero Section 2 (Swapped: Text Right, Image Left) */
+.hero-2 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row-reverse; /* Text on right, image on left */
+    align-items: center;
+    padding: 100px 20px 50px;
+    background: var(--color-bg); 
+    color:var(--color-text); /* #3e3e3e */
 }
 
 .hero-content {
     flex: 1;
     max-width: 600px;
+    text-align: left; /* Left-align text for readability */
 }
 
-.hero h1 {
+.hero-1 h1, .hero-2 h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
 .highlight {
-    color: #f39c12;
+    color: #ff6f3c; /* Orange */
 }
 
 .hero-subtitle {
@@ -181,6 +204,20 @@ body {
     margin-bottom: 2rem;
     opacity: 0.8;
 }
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+}
+
 
 .hero-buttons {
     display: flex;
@@ -199,12 +236,13 @@ body {
 }
 
 .btn-primary {
-    background: #3498db;
-    color: white;
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
 }
 
 .btn-primary:hover {
-    background: #2980b9;
+    background-color: var(--color-btn-hover);
     transform: translateY(-2px);
 }
 
@@ -271,7 +309,7 @@ body {
 
 .stat-item h3 {
     font-size: 2rem;
-    color: #3498db;
+    color: #ff6f3c;
     margin-bottom: 0.5rem;
 }
 
@@ -306,7 +344,7 @@ body {
 
 .skill-item i {
     font-size: 3rem;
-    color: #3498db;
+    color: #ff6f3c;
     margin-bottom: 1rem;
 }
 
@@ -403,7 +441,7 @@ body {
 
 .contact-item i {
     font-size: 1.2rem;
-    color: #3498db;
+    color: #ff6f3c;
     margin-right: 1rem;
     width: 20px;
 }
@@ -419,7 +457,7 @@ body {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: #3498db;
+    background: #ff6f3c;
     color: white;
     border-radius: 50%;
     text-decoration: none;
@@ -561,4 +599,174 @@ body {
     .project-links {
         flex-direction: column;
     }
+}
+
+/*Dev A: Additional Dark Mode Toggle, Loading Animation, Scroll Progress Indicator*/
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .hero-description,
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --card-bg: #2d2d2d;
+    --section-bg: #262626;
+}
+
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #ffffff;
+    --section-bg: #f8f9fa;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: #3498db;
+}
+
+/* Update other elements to use CSS variables */
+.skill-item, .project-card, .contact-form {
+    background: var(--card-bg);
+}
+
+.about, .projects {
+    background: var(--section-bg);
+}
+
+/* Scroll Progress Indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 1001;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #3498db, #f39c12);
+    width: 0%;
+    transition: width 0.1s ease;
+}
+
+/* Loader Styles */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color); /* Use theme background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+    overflow: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-animation {
+    width: 45px;
+    height: 30px;
+    background:
+        linear-gradient(#ff6f3c 0 0) 0 100%/100% 50%,
+        linear-gradient(#ff6f3c 0 0) 0 0/calc(100%/3) 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    clip-path: inset(-100% 0 0 0);
+    animation: l2-0 2s infinite steps(4);
+    margin: 0 auto 1rem;
+}
+
+.loader-animation::before,
+.loader-animation::after {
+    content: "";
+    position: absolute;
+    inset: -50% 0 50%;
+    background:
+        linear-gradient(#3e3e3e 0 0) 0 0/calc(2*100%/3) 50%,
+        linear-gradient(#3e3e3e 0 0) 100% 100%/calc(2*100%/3) 50%;
+    background-repeat: no-repeat;
+    animation: inherit;
+    animation-name: l2-1;
+}
+
+.loader-animation::after {
+    inset: -100% 0 100%;
+    background:
+        linear-gradient(#3e3e3e 0 0) 0 0/100% 50%,
+        linear-gradient(#3e3e3e 0 0) 100% 0/calc(100%/3) 100%;
+    background-repeat: no-repeat;
+    animation-name: l2-2;
+}
+
+@keyframes l2-0 {
+    0%       { transform: translateY(-250%); clip-path: inset(100% 0 0 0); }
+    25%,100% { transform: translateY(0); clip-path: inset(-100% 0 0 0); }
+}
+
+@keyframes l2-1 {
+    0%,25%   { transform: translateY(-250%); }
+    50%,100% { transform: translateY(0); }
+}
+
+@keyframes l2-2 {
+    0%,50%   { transform: translateY(-250%); }
+    75%,100% { transform: translateY(0); }
+}
+
+.progress-bar-container {
+    width: 200px;
+    height: 10px;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    margin: 1rem auto;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #ff6f3c; /* Orange, consistent with loader */
+    border-radius: 5px;
+    transition: width 0.15s ease-out;
+}
+
+.loader.fade-out {
+    opacity: 0;
+    pointer-events: none;
 }
