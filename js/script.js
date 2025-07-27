@@ -1,3 +1,40 @@
+// Typing Animation
+const typingText = document.getElementById('typing-text');
+const textArray = ['Full Stack Developer', 'React Specialist', 'Node.js Expert', 'UI/UX Enthusiast'];
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeWriter() {
+    const currentText = textArray[textIndex];
+    
+    if (!isDeleting) {
+        typingText.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+        
+        if (charIndex === currentText.length) {
+            isDeleting = true;
+            setTimeout(typeWriter, 2000);
+            return;
+        }
+    } else {
+        typingText.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+        
+        if (charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % textArray.length;
+        }
+    }
+    
+    setTimeout(typeWriter, isDeleting ? 50 : 150);
+}
+
+// Start typing animation
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(typeWriter, 1000);
+});
+
 // Mobile Navigation Toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
