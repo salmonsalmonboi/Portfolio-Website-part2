@@ -53,8 +53,12 @@
     <section id="hero-1" class="hero-1" data-aos="fade-up">
         <div class="hero-content">
             <h1>Hello, I'm <span class="highlight">Supakorn Sirimueangmoon</span></h1>
-            <p class="hero-subtitle">Dev A</p>
+            <p class="hero-subtitle">
+                <span id="typing-text"></span>
+                <span class="cursor">|</span>
+            </p>
             <p class="hero-description">I create beautiful and functional Dark Mode Toggle, Loading Animation, Scroll Progress Indicator and beautiful UX/UI</p>
+
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -148,9 +152,17 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">My Projects</h2>
-            <div class="projects-grid" data-aos="zoom-in">
-                <div class="project-card">
+            <h2 class="section-title">My Projects</h2>
+
+            <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web Apps</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+            <button class="filter-btn" data-filter="ui">UI/UX</button>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" data-category="web">
                     <img src="images/project1.jpg" alt="Project 1">
                     <div class="project-info">
                         <h3>Coffee Bean Classification and Sorting System using Deep Learning</h3>
@@ -159,8 +171,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <img src="images/project2.jpeg" alt="Project 2">
+                <div class="project-card" data-category="ui">
+                    <img src="images/project2.jpg" alt="Project 2">
+
                     <div class="project-info">
                         <h3>Mini Ecommerce Collaboration Website</h3>
                         <p>A collaborative Demo Store Website</p>
@@ -169,8 +182,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <img src="images/project3.jpeg" alt="Project 3">
+                <div class="project-card" data-category="mobile">
+                    <img src="images/project3.jpg" alt="Project 3">
                     <div class="project-info">
                         <h3>Coffee Bean Classification Dataset</h3>
                         <p>A dataset for Coffee Bean Classification</p>
@@ -231,14 +244,15 @@
             </div>
         </div>
     </section>
-
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Your Name. Software Engineering, RMUTL. All rights reserved.</p>
         </div>
     </footer>
-
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
@@ -247,7 +261,6 @@
         once: true      // เล่นครั้งเดียวเมื่อ scroll ถึง
     });
     </script>
-
     <script src="js/script.js"></script>
 </body>
 </html>
