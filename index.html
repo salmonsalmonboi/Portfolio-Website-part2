@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
 </head>
 <body>
+    <!-- Dev A: Additional Dark Mode Toggle, Loading Animation, Scroll Progress Indicator -->
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-animation"></div>
+            <div class="progress-bar-container">
+                <div class="progress-fill"></div>
+            </div>
+            <p>Loading Website...</p>
+        </div>
+    </div>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -21,7 +34,10 @@
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
+                <div class="theme-toggle">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+            </ul>   
             <div class="nav-toggle">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -29,54 +45,69 @@
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress">
+        <div class="progress-bar"></div>
+    </div>
+    <!-- Hero Section 1 -->
+    <section id="hero-1" class="hero-1" data-aos="fade-up">
         <div class="hero-content">
-            <h1>Hello, I'm <span class="highlight">Your Name</span></h1>
-            <p class="hero-subtitle">Full Stack Developer</p>
-            <p class="hero-description">I create beautiful and functional web applications</p>
+            <h1>Hello, I'm <span class="highlight">Supakorn Sirimueangmoon</span></h1>
+            <p class="hero-subtitle">Dev A</p>
+            <p class="hero-description">I create beautiful and functional Dark Mode Toggle, Loading Animation, Scroll Progress Indicator and beautiful UX/UI</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
         </div>
         <div class="hero-image">
-            <img src="images/profile.jpg" alt="Profile Picture">
+            <img src="images/profile1.jpg" alt="Profile Picture">
+        </div>
+    </section>
+
+<!-- Hero Section 2 -->
+    <section id="hero-2" class="hero-2" data-aos="fade-up">
+        <div class="hero-content">
+            <h1>Hello, I'm <span class="highlight">Audsadakorn Jeerahat</span></h1>
+            <p class="hero-subtitle">Dev B</p>
+            <p class="hero-description">I development Project Filter System, Typing Animation, Back to Top Button</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="images/profile2.jpg" alt="Profile Picture">
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-aos="zoom-in-up" data-aos-delay="200">About Us</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <p>I am a passionate Full Stack Developer with experience in creating web applications using modern technologies. I love solving complex problems and learning new technologies.</p>
+                <div class="about-text" data-aos="zoom-in-up" data-aos-delay="200">
+                    <p>We are developers of an automated coffee bean sorting machine based on a conveyor belt system using deep learning. We have collected datasets and fine-tuned hyperparameters to train a YOLO model for coffee bean classification.</p>
                     <div class="about-stats">
                         <div class="stat-item">
-                            <h3>2+</h3>
-                            <p>Years Experience</p>
+                            <h3>YOLOv12</h3>
+                            <p>Deep Learning</p>
                         </div>
                         <div class="stat-item">
-                            <h3>15+</h3>
-                            <p>Projects Completed</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>10+</h3>
-                            <p>Happy Clients</p>
-                        </div>
+                            <h3>4000+</h3>
+                            <p>Dataset</p>
+                        </div>            
                     </div>
                 </div>
-                <div class="about-image">
+                <div class="about-image" data-aos="zoom-in-up" data-aos-delay="200">
                     <img src="images/about.jpg" alt="About Image">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
+      <!-- Skills Section -->
+    <section id="skills" class="skills" >
         <div class="container">
             <h2 class="section-title">My Skills</h2>
             <div class="skills-grid">
@@ -96,19 +127,19 @@
                     <p>ES6+ features and modern JavaScript</p>
                 </div>
                 <div class="skill-item">
-                    <i class="fab fa-react"></i>
-                    <h3>React</h3>
-                    <p>Component-based UI development</p>
+                    <i class="fas fa-robot"></i>
+                    <h3>Machine Learning</h3>
+                    <p>Able to manage the dataset for training the model and fine-tune the parameters to suit the task</p>
                 </div>
                 <div class="skill-item">
-                    <i class="fab fa-node-js"></i>
-                    <h3>Node.js</h3>
-                    <p>Server-side JavaScript development</p>
+                    <i class="fa-brands fa-python"></i>
+                    <h3>Python</h3>
+                    <p>Possesses a foundational knowledge of Python, with the ability to perform data analysis and contribute to software development</p>
                 </div>
                 <div class="skill-item">
-                    <i class="fas fa-database"></i>
-                    <h3>MongoDB</h3>
-                    <p>NoSQL database management</p>
+                    <i class="fa-solid fa-c"></i>
+                    <h3>C/C++</h3>
+                    <p>Have an understanding and be able to develop various aspects of this language</p>
                 </div>
             </div>
         </div>
@@ -117,37 +148,34 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="projects-grid">
+            <h2 class="section-title" data-aos="fade-up">My Projects</h2>
+            <div class="projects-grid" data-aos="zoom-in">
                 <div class="project-card">
                     <img src="images/project1.jpg" alt="Project 1">
                     <div class="project-info">
-                        <h3>E-commerce Website</h3>
-                        <p>A full-stack e-commerce solution built with React and Node.js</p>
+                        <h3>Coffee Bean Classification and Sorting System using Deep Learning</h3>
+                        <p>A Coffee Bean Classification and Sorting System by YOLOv12</p>
                         <div class="project-links">
-                            <a href="#" class="btn btn-small">Live Demo</a>
-                            <a href="#" class="btn btn-small btn-secondary">GitHub</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="images/project2.jpg" alt="Project 2">
+                    <img src="images/project2.jpeg" alt="Project 2">
                     <div class="project-info">
-                        <h3>Task Management App</h3>
-                        <p>A collaborative task management application with real-time updates</p>
+                        <h3>Mini Ecommerce Collaboration Website</h3>
+                        <p>A collaborative Demo Store Website</p>
                         <div class="project-links">
-                            <a href="#" class="btn btn-small">Live Demo</a>
-                            <a href="#" class="btn btn-small btn-secondary">GitHub</a>
+                            <a href="https://github.com/salmonsalmonboi/mini-ecommerce-collaboration" class="btn btn-small">GitHub</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="images/project3.jpg" alt="Project 3">
+                    <img src="images/project3.jpeg" alt="Project 3">
                     <div class="project-info">
-                        <h3>Weather App</h3>
-                        <p>A responsive weather application with location-based forecasts</p>
+                        <h3>Coffee Bean Classification Dataset</h3>
+                        <p>A dataset for Coffee Bean Classification</p>
                         <div class="project-links">
-                            <a href="#" class="btn btn-small">Live Demo</a>
+                            <a href="https://universe.roboflow.com/chetsada-rngwe/coffee-bean-webcam" class="btn btn-small">Dataset</a>
                             <a href="#" class="btn btn-small btn-secondary">GitHub</a>
                         </div>
                     </div>
@@ -155,7 +183,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -167,7 +195,11 @@
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>your.email@example.com</span>
+                            <span>(Dev A) supasupa.korn556@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>(Dev B) jeerahutaudsadakorn2003@gmail.com</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
@@ -175,7 +207,7 @@
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Bangkok, Thailand</span>
+                            <span>Chiangmai, Thailand</span>
                         </div>
                     </div>
                     <div class="social-links">
@@ -207,6 +239,15 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+        duration: 1000, // ความเร็วแอนิเมชัน (ms)
+        once: true      // เล่นครั้งเดียวเมื่อ scroll ถึง
+    });
+    </script>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
