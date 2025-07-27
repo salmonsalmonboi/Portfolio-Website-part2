@@ -121,8 +121,16 @@
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
+
+            <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web Apps</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+            <button class="filter-btn" data-filter="ui">UI/UX</button>
+            </div>
+
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-category="web">
                     <img src="images/project1.jpg" alt="Project 1">
                     <div class="project-info">
                         <h3>E-commerce Website</h3>
@@ -133,7 +141,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="ui">
                     <img src="images/project2.jpg" alt="Project 2">
                     <div class="project-info">
                         <h3>Task Management App</h3>
@@ -144,7 +152,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="mobile">
                     <img src="images/project3.jpg" alt="Project 3">
                     <div class="project-info">
                         <h3>Weather App</h3>
